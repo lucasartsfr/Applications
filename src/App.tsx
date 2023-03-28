@@ -1,17 +1,11 @@
 import './App.css'
 import Icon from './components/Icon'
 import Header from './components/Header'
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
+import {QueryClient, QueryClientProvider,} from 'react-query'
 import Interface from './components/Interface';
 import { MyContextProvider } from './context';
 
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 function App() {
 
