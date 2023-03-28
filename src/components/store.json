@@ -1,0 +1,14 @@
+{
+    "Explaura" : {
+        "Icon" : "http://api.lucasarts.fr/store/explaura-icon.png",
+        "Download" : "http://api.lucasarts.fr/store/explaura-icon.png",
+        "Description" : "Ceci est un message de test de Description",
+        "Title" : "Explaura - Explore Auvergne Rhone Alpes"
+    },
+    "GPCalendar" : {
+        "Icon" : "http://api.lucasarts.fr/store/GP-Calendar-icon.png",
+        "Download" : "http://api.lucasarts.fr/store/GP-Calendar-icon.png",
+        "Description" : "Ceci est un message de test de Description de hp",
+        "Title" : "GP Calendar - Fomula One & Moto GP Calendar"
+    }
+}

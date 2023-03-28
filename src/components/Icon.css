@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+
+.IconContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    align-items: center;
+    overscroll-behavior-y: contain;
+    scroll-behavior: smooth;
+}
+
+#OnMobile .IconContainer{
+    scroll-snap-type: x mandatory;
+}
+
+.IconBlock{
+    max-width: calc(var(--SizeIcon) * 3);
+    max-height: var(--SizeIcon);
+    margin: var(--Margin);
+    margin-right: calc(var(--Margin) / 4);
+    transition: .4s;
+    /* animation-duration: .4s; */
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    /* animation-name: FadeIn; */
+    scroll-snap-align: center;
+}
+
+
+
+.active .IconTitle, .IconBlock:hover .IconTitle{
+    opacity: 1;
+}
+
+.IconTitle{
+    transition: .2s;
+    opacity: 0;
+    margin: 0;
+    margin-bottom: 10px;    
+    margin-left: 24px;
+    color: white;
+}
+
+.IconData{
+    display: flex;
+    position: relative;
+    transition: .4s;
+}
+
+.active .IconDescription{
+    left: 110%;
+    /* border-bottom-left-radius: 0;
+    border-top-left-radius: 0; */
+}
+
+#OnMobile .active .IconDescription{
+    top : 110%;
+    left : 0%
+}
+
+#OnMobile .active .IconData{
+    margin-right : 0;
+    transform: translateY(-100%);
+}
+
+
+
+.active .IconData{
+    margin-right: calc(var(--SizeIcon) + (var(--Margin) * 1.8) );    
+}
+
+.IconWrapper{
+    background-color: var(--ThemeColor);    
+    /* margin: var(--Margin) calc(var(--Margin) / 2); */
+    width: var(--SizeIcon);
+    height: var(--SizeIcon);
+    aspect-ratio: 1 /1 ;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid transparent;
+    border-radius: var(--Radius);
+    transition: .2s;
+    z-index: 1;
+}
+
+.active .IconWrapper, .IconWrapper:hover{
+    border: 0px solid var(--ThemeColor);
+    transform: scale(1.05);
+}
+
+.IconDescription{  
+    width: var(--SizeIcon);
+    height: var(--SizeIcon);
+    aspect-ratio: 1 /1 ;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 5px solid transparent;
+    border-radius: var(--Radius);
+    transition: .2s;
+    position: absolute;
+    background-color: rgba(0,0,0,0.1);
+    left: 0;
+    z-index: 0;
+    padding: 10px;
+    color: white;
+}
+
+.Icon{
+    background-color: white;
+    max-width: calc(var(--SizeIcon) - 0px);
+    max-height: calc(var(--SizeIcon) - 0px);
+    cursor: pointer;
+    transition: .4s;
+    border-radius: var(--Radius);
+}
+
+.active .Icon, .Icon:hover{
+    transform: scale(.94);
+    border-radius: calc(var(--Radius) *0.96);
+}
+
+.IconButton{
+    background-color: white;
+    color: var(--GreyBG);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 6px 14px;
+    font-weight: 600;
+}
+
+@keyframes FadeIn {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.untouchable .IconData{
+    opacity: .2;
+    filter: grayscale(1);
+}
+
+.untouchable{    
+    pointer-events: none;
+}
+
