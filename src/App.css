@@ -16,6 +16,18 @@
 :root{
   --GreyBG : #333333;
   --GreyLight : #4d4d4d;
+  --TextColor : #ffffff;
+  --Margin : 20px;
+  --SizeIcon : 300px;    
+  --Radius : 42px;
+  --ThemeColor : #00bcdf;
+  --Transition : .4s;
+}
+
+[data-theme='light'] {
+  --GreyBG : #ebebeb;
+  --GreyLight : #ffffff;
+  --TextColor : #333333;
   --Margin : 20px;
   --SizeIcon : 300px;    
   --Radius : 42px;
@@ -28,7 +40,7 @@ html, body, #root{
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--GreyBG);
+  /* background-color: var(--GreyBG); */
   overflow: hidden;
 }
 
@@ -38,6 +50,8 @@ html, body, #root{
   height: 100%;
   width: 100%;
   padding: 20px;
+  background-color: var(--GreyBG);
+  transition: var(--Transition);
 }
 
 

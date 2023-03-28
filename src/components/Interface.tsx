@@ -38,7 +38,7 @@ export default function Interface(){
             IconTag :  <Apple color='#A2AAAD'/>
         },
         Desktop : {
-            IconTag : <Desktop color='#ffffff'/>
+            IconTag : <Desktop color='#f24e5a'/>
         }
     }
 

@@ -20,8 +20,8 @@
     max-height: var(--SizeIcon);
     margin: var(--Margin);
     margin-right: calc(var(--Margin) / 4);
-    transition: .4s;
-    /* animation-duration: .4s; */
+    transition: var(--Transition);
+    /* animation-duration: var(--Transition); */
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
     /* animation-name: FadeIn; */
@@ -35,18 +35,18 @@
 }
 
 .IconTitle{
-    transition: .2s;
+    transition: calc(var(--Transition) / 2);
     opacity: 0;
     margin: 0;
     margin-bottom: 10px;    
     margin-left: 24px;
-    color: white;
+    color: var(--TextColor);
 }
 
 .IconData{
     display: flex;
     position: relative;
-    transition: .4s;
+    transition: var(--Transition);
 }
 
 .active .IconDescription{
@@ -83,7 +83,7 @@
     justify-content: center;
     border: 5px solid transparent;
     border-radius: var(--Radius);
-    transition: .2s;
+    transition: calc(var(--Transition) / 2);
     z-index: 1;
 }
 
@@ -103,13 +103,13 @@
     flex-direction: column;
     border: 5px solid transparent;
     border-radius: var(--Radius);
-    transition: .2s;
+    transition: calc(var(--Transition) / 2);
     position: absolute;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.2);
     left: 0;
     z-index: 0;
     padding: 10px;
-    color: white;
+    color: var(--TextColor);
 }
 
 .Icon{
@@ -117,7 +117,7 @@
     max-width: calc(var(--SizeIcon) - 0px);
     max-height: calc(var(--SizeIcon) - 0px);
     cursor: pointer;
-    transition: .4s;
+    transition: var(--Transition);
     border-radius: var(--Radius);
 }
 
@@ -127,7 +127,7 @@
 }
 
 .IconButton{
-    background-color: white;
+    background-color: var(--TextColor);
     color: var(--GreyBG);
     border-radius: 100px;
     display: flex;
