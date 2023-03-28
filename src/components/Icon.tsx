@@ -1,18 +1,16 @@
 import './Icon.css';
-import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from 'react-query'
-import { useState, useContext, useEffect, useRef } from 'react';
+import { useQuery } from 'react-query'
+import { useState, useContext, useRef } from 'react';
 import { MyContext, MyContextType } from '../context';
 import useSound from 'use-sound';
-import ClickSound from '../assets/sound/open.mp3';
-import HoverSound from '../assets/sound/page-change.mp3';
 import ScrollContainer from 'react-indiana-drag-scroll'
 
 
 export default function Icon(){
 
     const { filter, setItem, sound } = useContext(MyContext) as MyContextType;
-    const [playClickSound] = useSound(ClickSound, { soundEnabled : sound});
-    const [playHoverSound] = useSound(HoverSound, { soundEnabled : sound});
+    const [playClickSound] = useSound("/sound/open.mp3", { soundEnabled : sound});
+    const [playHoverSound] = useSound("/sound/page-change.mp3", { soundEnabled : sound});
     const [focus, setFocus] = useState('');
     const ScrollRef = useRef();
     

@@ -6,15 +6,13 @@ import { HiComputerDesktop as Desktop}  from 'react-icons/hi2';
 import { AiFillStar as Star}  from 'react-icons/ai';
 import { MyContext, MyContextType } from '../context';
 import useSound from 'use-sound';
-import ClickSound from '../assets/sound/bing.mp3';
-import HoverSound from '../assets/sound/page-change.mp3';
+
 
 export default function Interface(){
 
-    
     const { setFilter, filter, sound } = useContext(MyContext) as MyContextType;
-    const [playClickSound] = useSound(ClickSound, { soundEnabled : sound});
-    const [playHoverSound] = useSound(HoverSound, { soundEnabled : sound});
+    const [playClickSound] = useSound("/sound/Bing.mp3", { soundEnabled : sound});
+    const [playHoverSound] = useSound("/sound/page-change.mp3", { soundEnabled : sound});
 
 
     const ApplyFilter = (e:any) => {

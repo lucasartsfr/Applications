@@ -1,17 +1,15 @@
 import './Header.css'
 import { MyContext, MyContextType } from '../context';
-import { useState, useContext, useEffect } from 'react';
-import {CiBatteryFull as Battery} from 'react-icons/ci'
+import { useContext } from 'react';
 import {BsFillVolumeDownFill as Sound} from 'react-icons/bs';
 import {BsFillVolumeMuteFill as Mute} from 'react-icons/bs';
 import useSound from 'use-sound';
-import ClickSound from '../assets/sound/Eshop.mp3';
 
 export default function Header(){
     
     
     const { item, sound, setSound } = useContext(MyContext) as MyContextType;
-    const [playClickSound] = useSound(ClickSound, { soundEnabled : sound});
+    const [playClickSound] = useSound("/sound/Eshop.mp3", { soundEnabled : sound});
 
     return(
         <div className="Header">
