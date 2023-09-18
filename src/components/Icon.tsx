@@ -21,7 +21,7 @@ export default function Icon(){
         Download: string;
         Description: string;
         Title: string;
-        Button : string;
+        Button : object,
         Type : string
     }
     
@@ -34,7 +34,7 @@ export default function Icon(){
     
     
     const { isLoading, error, data } = useQuery('icones', async () => {
-        const response = await fetch('https://api.lucasarts.fr/store/store.json').then((res) => res.json());
+        const response = await fetch('https://projects.lucasarts.fr/Stores/store.json').then((res) => res.json());
         setItem(Object.keys(response).length);
         return response
         }
@@ -72,6 +72,10 @@ export default function Icon(){
                 animationName: "FadeIn",
             }
 
+            const Buttons = Object.keys(data[icon].Button).map(btn =>{
+                return <a key={btn} className='IconButton' target="_blank" href={data[icon].Button[btn].Link}>{data[icon].Button[btn].Name}</a>
+            })
+
             return (
                 <div key={icon} style={Animation} id={icon} className={`IconBlock ${isFocus} ${Untouchable}`} onMouseEnter={() => playHoverSound()}  onClick={() => MoreInfo(icon)}>
                     <h2 className='IconTitle'>{icon}</h2>
@@ -82,7 +86,7 @@ export default function Icon(){
                         <div className="IconDescription">
                             <h3>{data[icon].Title}</h3>
                             <p>{data[icon].Description}</p>
-                            <a className='IconButton' target="_blank" href={data[icon].Download}>{data[icon].Button}</a>
+                            {Buttons}
                         </div>
                     </div>
                 </div>
